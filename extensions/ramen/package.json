@@ -1,0 +1,99 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "ramen",
+  "title": "Ramen Dashboard",
+  "description": "Track your journey to Ramen Profitability. Real-time revenue in your menu bar.",
+  "icon": "command-icon.png",
+  "author": "dennis",
+  "categories": [
+    "Developer Tools",
+    "Productivity",
+    "Finance"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  },
+  "commands": [
+    {
+      "name": "revenue-menu",
+      "title": "Revenue Monitor",
+      "description": "Shows daily MRR and sales in Menu Bar",
+      "mode": "menu-bar",
+      "interval": "15m",
+      "preferences": [
+        {
+          "name": "stripeSecretKey",
+          "title": "Stripe Secret Key",
+          "description": "Your Restricted Key (Read-Only) starting with rk_...",
+          "type": "password",
+          "required": true,
+          "placeholder": "sk_live_..."
+        },
+        {
+          "name": "currencySymbol",
+          "title": "Display Currency",
+          "description": "Symbol shown in the menu bar",
+          "type": "dropdown",
+          "required": true,
+          "default": "$",
+          "data": [
+            {
+              "title": "USD ($)",
+              "value": "$"
+            },
+            {
+              "title": "CNY (¥)",
+              "value": "¥"
+            },
+            {
+              "title": "EUR (€)",
+              "value": "€"
+            }
+          ]
+        },
+        {
+          "name": "monthlyGoal",
+          "title": "Monthly Ramen Goal",
+          "description": "How much do you need per month for ramen profitability?",
+          "type": "textfield",
+          "required": false,
+          "default": "2000",
+          "placeholder": "e.g. 2000"
+        },
+        {
+          "name": "lemonSqueezyApiKey",
+          "title": "Lemon Squeezy API Key",
+          "description": "Your API key from Lemon Squeezy (Optional)",
+          "type": "password",
+          "required": false
+        },
+        {
+          "name": "showPrivateMode",
+          "label": "Hide amount by default",
+          "type": "checkbox",
+          "description": "Only show icon in menu bar, show amount on hover/click.",
+          "required": false,
+          "default": false
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.64.0",
+    "@raycast/utils": "^1.10.0",
+    "date-fns": "^3.0.0",
+    "stripe": "^14.10.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "20.8.10",
+    "@types/node-fetch": "^2.6.11",
+    "@types/react": "19.0.10",
+    "typescript": "^5.2.2"
+  }
+}
