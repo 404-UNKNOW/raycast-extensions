@@ -158,7 +158,7 @@ export default function Command() {
         <MenuBarExtra.Item
           title="Analyze Churn & LTV (Pro Dashboard)"
           icon={{ source: Icon.Star, tintColor: Color.Yellow }}
-          onAction={() => open("https://ramen-saas.com/login?ref=mac-plugin")}
+          onAction={() => open("https://ramen-landing.vercel.app")}
           shortcut={{ modifiers: ["cmd", "shift"], key: "p" }}
         />
       </MenuBarExtra.Section>
