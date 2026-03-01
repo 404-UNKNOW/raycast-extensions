@@ -1,6 +1,6 @@
 # Ramen Changelog
 
-## [1.0.0] - 2026-03-01
+## [1.0.0] - {PR_MERGE_DATE}
 
 ### Added
 - Initial release of Ramen Dashboard.

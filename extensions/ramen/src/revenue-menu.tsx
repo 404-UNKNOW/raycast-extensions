@@ -12,11 +12,6 @@ import { fetchAllRevenue } from "./utils/api";
 import { useEffect, useRef } from "react";
 import { format } from "date-fns";
 
-interface Preferences {
-  monthlyGoal?: string;
-  currencySymbol?: string;
-}
-
 const formatCurrency = (amount: number, symbol: string = "$") => {
   return `${symbol}${amount.toLocaleString("en-US", {
     minimumFractionDigits: 2,
@@ -43,7 +38,7 @@ function generateSparkline(data: number[]): string {
 }
 
 export default function Command() {
-  const preferences = getPreferenceValues<Preferences>();
+  const preferences = getPreferenceValues();
   const { currencySymbol = "$", monthlyGoal = "2000" } = preferences;
 
   const [isPrivate, setIsPrivate] = useCachedState("ramen-privacy-mode", false);
@@ -127,7 +122,6 @@ export default function Command() {
         />
       </MenuBarExtra.Section>
 
-      {/* 杀手锏二：去除交互摩擦 (最近三笔交易) */}
       <MenuBarExtra.Section title="Recent Drops 💰">
         {data?.recentTransactions.length === 0 ? (
           <MenuBarExtra.Item title="No sales yet today. Keep cooking! 🍜" />
@@ -150,7 +144,6 @@ export default function Command() {
         )}
       </MenuBarExtra.Section>
 
-      {/* 杀手锏三：快速动作专区 (引流) */}
       <MenuBarExtra.Section title="🚀 Quick Actions">
         <MenuBarExtra.Item
           title="Share Progress on X (Twitter)"

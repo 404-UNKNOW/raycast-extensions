@@ -32,7 +32,7 @@
           "description": "Your Restricted Key (Read-Only) starting with rk_...",
           "type": "password",
           "required": true,
-          "placeholder": "sk_live_..."
+          "placeholder": "rk_live_..."
         },
         {
           "name": "currencySymbol",
@@ -92,7 +92,6 @@
   "devDependencies": {
     "@raycast/eslint-config": "^1.0.6",
     "@types/node": "20.8.10",
-    "@types/node-fetch": "^2.6.11",
     "@types/react": "19.0.10",
     "typescript": "^5.2.2"
   }
