@@ -1,0 +1,70 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "flow-capture",
+  "title": "FlowCapture",
+  "description": "Capture tasks quickly to Linear with AI assistance",
+  "icon": "command-icon.png",
+  "author": "dennis",
+  "categories": [
+    "Productivity",
+    "Developer Tools"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "index",
+      "title": "FlowCapture",
+      "subtitle": "AI Quick Capture",
+      "description": "Capture clipboard noise into a structured Linear task using AI",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "linearApiKey",
+      "type": "password",
+      "title": "Linear API Key",
+      "description": "Your Linear Personal Access Token (PAT)",
+      "required": true,
+      "placeholder": "lin_api_..."
+    },
+    {
+      "name": "llmApiKey",
+      "type": "password",
+      "title": "LLM API Key",
+      "description": "OpenAI compatible API Key for intelligent processing",
+      "required": true,
+      "placeholder": "sk-..."
+    },
+    {
+      "name": "defaultAssignee",
+      "type": "textfield",
+      "title": "Default Assignee ID",
+      "description": "The default user ID or email to assign captured tasks (Optional)",
+      "required": false,
+      "placeholder": "UUID or email"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.8",
+    "@raycast/utils": "^1.19.0",
+    "@linear/sdk": "^76.0.0",
+    "openai": "^6.27.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "20.8.10",
+    "@types/react": "18.3.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "npx @raycast/api build -e dist",
+    "dev": "npx @raycast/api develop",
+    "fix-lint": "npx @raycast/api lint --fix",
+    "lint": "npx @raycast/api lint",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\\"prepublishOnly\\\" script and rerun \\\"npm publish\\\" again.\\nIf you wanted to publish it to the Raycast Store instead, use \\\"npm run publish\\\" instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
