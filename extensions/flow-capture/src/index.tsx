@@ -88,7 +88,7 @@ export default function Command() {
       <Detail
         isLoading={true}
         navigationTitle="FlowCapture: 正在提炼灵感..."
-        content=""
+        markdown=""
       />
     );
   }
@@ -154,18 +154,14 @@ export default function Command() {
         <Form.Dropdown.Item
           value="High"
           title="High / 紧急"
-          icon={{ source: Icon.Circle, color: "#FF453A" }}
+          icon={Icon.Circle}
         />
         <Form.Dropdown.Item
           value="Medium"
           title="Medium / 普通"
-          icon={{ source: Icon.Circle, color: "#FFD60A" }}
+          icon={Icon.Circle}
         />
-        <Form.Dropdown.Item
-          value="Low"
-          title="Low / 稍后"
-          icon={{ source: Icon.Circle, color: "#32D74B" }}
-        />
+        <Form.Dropdown.Item value="Low" title="Low / 稍后" icon={Icon.Circle} />
       </Form.Dropdown>
 
       <Form.Separator />

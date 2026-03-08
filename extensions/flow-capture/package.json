@@ -35,14 +35,6 @@
       "description": "OpenAI compatible API Key for intelligent processing",
       "required": true,
       "placeholder": "sk-..."
-    },
-    {
-      "name": "defaultAssignee",
-      "type": "textfield",
-      "title": "Default Assignee ID",
-      "description": "The default user ID or email to assign captured tasks (Optional)",
-      "required": false,
-      "placeholder": "UUID or email"
     }
   ],
   "dependencies": {
@@ -64,7 +56,6 @@
     "dev": "npx @raycast/api develop",
     "fix-lint": "npx @raycast/api lint --fix",
     "lint": "npx @raycast/api lint",
-    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\\"prepublishOnly\\\" script and rerun \\\"npm publish\\\" again.\\nIf you wanted to publish it to the Raycast Store instead, use \\\"npm run publish\\\" instead.\\n\\n\" && exit 1",
     "publish": "npx @raycast/api@latest publish"
   }
 }
